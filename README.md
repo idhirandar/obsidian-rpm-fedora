@@ -1,15 +1,23 @@
-# obsidian-rpm-fedora
+# Obsidian native RPM for Fedora (no Flatpak lag)
 
-# Native Obsidian RPM for Fedora (no Flatpak lag!)
+This repo contains only the `.spec` file and instructions to build a clean, native Obsidian RPM yourself.
 
-Fast, native, properly integrated Obsidian for Fedora 41–43+  
-- Instant startup  
-- Native Wayland/GPU acceleration  
-- Correct icon and menu entry  
+**No pre-built binary is distributed** — you download the official tarball directly from Obsidian.
 
-**Download the latest release →** https://github.com/idhirandar/obsidian-rpm-fedora/releases
+### How to build (takes 30 seconds)
 
-Install with one command:
 ```bash
-sudo dnf install ./obsidian-*.rpm
+# 1. Download official tarball
+wget https://github.com/obsidianmd/obsidian-releases/releases/download/v1.10.3/Obsidian-1.10.3.tar.gz
 
+# 2. Install build tools (once)
+sudo dnf install rpmdevtools
+
+# 3. Build the RPM
+rpmdev-setuptree
+cp Obsidian-1.10.3.tar.gz obsidian.spec ~/.rpmmacros
+spectool -g -R obsidian.spec
+rpmbuild -ba obsidian.spec
+
+# 4. Install
+sudo dnf install ~/rpmbuild/RPMS/x86_64/obsidian-*.rpm
