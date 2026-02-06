@@ -8,14 +8,14 @@ This repo contains only the `.spec` file and instructions to build a clean, nati
 
 ```bash
 # 1. Download official tarball
-wget https://github.com/obsidianmd/obsidian-releases/releases/download/v1.10.3/Obsidian-1.10.3.tar.gz
+wget https://github.com/obsidianmd/obsidian-releases/releases/download/v1.11.7/obsidian-1.11.7.tar.gz
 
 # 2. Install build tools (once)
 sudo dnf install rpmdevtools
 
 # 3. Build the RPM
 rpmdev-setuptree
-cp Obsidian-1.10.3.tar.gz obsidian.spec ~/.rpmmacros
+cp Obsidian-1.11.3.tar.gz obsidian.spec ~/.rpmmacros
 spectool -g -R obsidian.spec
 rpmbuild -ba obsidian.spec
 
