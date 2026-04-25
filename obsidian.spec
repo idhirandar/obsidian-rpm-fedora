@@ -1,5 +1,5 @@
 Name:           obsidian
-Version:        1.12.4
+Version:        1.12.7
 Release:        1%{?dist}
 Summary:        Obsidian - A powerful knowledge base on top of local Markdown files
 
@@ -70,6 +70,6 @@ install -Dm644 resources/icon.png \
 %{_datadir}/icons/hicolor/512x512/apps/obsidian.png
 
 %changelog
-* Wed Mar 4 2026 Dhirandar <idhirandar@gmail.com> - 1.12.4-1
-- Final working native RPM for Obsidian 1.12.4 (creates .desktop ourselves)
+* Wed Mar 4 2026 Dhirandar <idhirandar@gmail.com> - 1.12.7-1
+- Final working native RPM for Obsidian 1.12.7 (creates .desktop ourselves)
 %global debug_package %{nil}
