@@ -1,11 +1,11 @@
 Name:           obsidian
-Version:        1.12.7
+Version:        1.14.5
 Release:        1%{?dist}
 Summary:        Obsidian - A powerful knowledge base on top of local Markdown files
 
 License:        Commercial
 URL:            https://obsidian.md
-Source0:        Obsidian-%{version}.tar.gz
+Source0:        obsidian-%{version}.tar.gz
 
 BuildArch:      x86_64
 AutoReqProv:    no
@@ -70,6 +70,10 @@ install -Dm644 resources/icon.png \
 %{_datadir}/icons/hicolor/512x512/apps/obsidian.png
 
 %changelog
+* Fri Oct 23 2026 psina64 <aaa53399991@gmail.com> - 1.14.5-1
+- Update to Obsidian 1.14.5
+- Change Source0 filename pattern from Obsidian* to obsidian* to match the original tarball
+
 * Wed Mar 4 2026 Dhirandar <idhirandar@gmail.com> - 1.12.7-1
 - Final working native RPM for Obsidian 1.12.7 (creates .desktop ourselves)
 %global debug_package %{nil}
